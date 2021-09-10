@@ -21,6 +21,7 @@ class Index extends MY_Controller
 		}
 
 		$sehir = $this->input->post('sehir',TRUE);
+
 		$v_daireleri = getVergiDaireleri($sehir);
 		if($v_daireleri) {
 			$json['data']=' <select id="vds" class="form-control">';
@@ -47,22 +48,23 @@ class Index extends MY_Controller
 		$vd = $this->input->post('vd',TRUE);
 		$vkn = $this->input->post('vkn',TRUE);
 		$vergiSorgula = getVergiDetail($vkn,$vd,$sehir);
-		if($vergiSorgula) {
+		
+		if($vergiSorgula['status']!='error') {
 			$json['data']='
 			<div style="width:100%;margin-top: 10px;" class="alert alert-success" role="alert">
 			  	<table class="table">
 				  <tbody>
 				    <tr>
 				      <th scope="row">VKN</th>
-				      <td>'.$vergiSorgula->data->vkn.'</td>
+				      <td>'.$vergiSorgula['message']->data->vkn.'</td>
 				      <th scope="row">ÜNVAN</th>
-				      <td>'.$vergiSorgula->data->unvan.'</td>
+				      <td>'.$vergiSorgula['message']->data->unvan.'</td>
 				    </tr>
 				    <tr>
 				      <th scope="row">Vergi Dairesi</th>
-				      <td>'.getVergiDaireleri($sehir,$vergiSorgula->data->vdkodu).'</td>
+				      <td>'.getVergiDaireleri($sehir,$vergiSorgula['message']->data->vdkodu).'</td>
 				      <th scope="row">Durumu</th>
-				      <td>'.$vergiSorgula->data->durum_text.'</td>
+				      <td>'.$vergiSorgula['message']->data->durum_text.'</td>
 				    </tr>
 				    <tr>
 				  </tbody>

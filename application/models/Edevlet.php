@@ -79,9 +79,20 @@ class Edevlet extends ActiveRecord\Model
 
 			$context  = stream_context_create($opts);
 			$result = file_get_contents('https://ivd.gib.gov.tr/tvd_server/dispatch', false, $context);
+     
             if($result!='' && $result!=null) {
                 $datas=json_decode($result,false);
-                return $datas;
+           
+                if(!$datas->error) {
+                    $return= array(
+                        'status'=>'success',
+                        'message'=>$datas
+                    );
+                    return $return;
+                } else {
+                    throw new Exception('Hata');
+                }
+            
             } else {
                 throw new Exception('Hata');
             }

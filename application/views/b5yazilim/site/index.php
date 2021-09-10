@@ -30,9 +30,11 @@
 <script>
   const baseUrl = '<?=base_url();?>';
   $('body').on('change','#sehir',function() {
+    console.log(baseUrl+'demo/Gibapi/getVD');
     var sehir = $(this).val();
+    $('#response').html('');
     $.ajax({
-      url: baseUrl+'index/getVD',
+      url: baseUrl+'demo/Gibapi/getVD',
       type: "post",
       dataType:'json',
       data: {sehir:sehir} ,
@@ -52,8 +54,9 @@
     var sehir = $('#sehir').val();
     var vd = $('#vds').val();
     var vkn = $('#vkn').val();
+    $('#response').html('');
     $.ajax({
-      url: baseUrl+'index/sorgu',
+      url: baseUrl+'demo/Gibapi/sorgu',
       type: "post",
       dataType:'json',
       data: {
@@ -63,11 +66,10 @@
       },
       success: function (response) {
         if(response.status==200) {
-          $('#response').html(response.data)
+          $('#response').html(response.data);
         } else {
           alert('Veri Bulunamadı !')
         }
-        console.log(response)
       },
       error: function(jqXHR, textStatus, errorThrown) {
          console.log(textStatus, errorThrown);
