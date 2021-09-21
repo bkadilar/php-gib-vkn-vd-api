@@ -1,4 +1,14 @@
 <?php
+
+/**
+ * Class Edevlet
+ * @author Burak KADILAR
+ * @blog https://www.burakkadilar.com.tr
+ * @mail b.kadilar@b5yazilim.com
+ * @date 07.09.2021
+ * @update 21.09.2021
+ */
+
 class Edevlet extends ActiveRecord\Model
 {
 
