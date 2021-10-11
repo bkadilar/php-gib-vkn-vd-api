@@ -30,11 +30,10 @@
 <script>
   const baseUrl = '<?=base_url();?>';
   $('body').on('change','#sehir',function() {
-    console.log(baseUrl+'demo/Gibapi/getVD');
     var sehir = $(this).val();
     $('#response').html('');
     $.ajax({
-      url: baseUrl+'demo/Gibapi/getVD',
+      url: baseUrl+'Gibapi/getVD',
       type: "post",
       dataType:'json',
       data: {sehir:sehir} ,
@@ -56,7 +55,7 @@
     var vkn = $('#vkn').val();
     $('#response').html('');
     $.ajax({
-      url: baseUrl+'demo/Gibapi/sorgu',
+      url: baseUrl+'Gibapi/sorgu',
       type: "post",
       dataType:'json',
       data: {
