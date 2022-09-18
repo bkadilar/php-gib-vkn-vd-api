@@ -119,8 +119,8 @@ function getVergiDaireleri($kod=false,$inKod=false) {
 }
 
 //Edevlet model ine gidip api ye çıkacağımız fonksiyon olarak kullanabilirsiniz.
-function getVergiDetail($vkn,$vd,$il) {
-    $vknSorgu=Edevlet::vkn_sorgu($vkn,$vd,$il);
+function getVergiDetail($vkn,$vd,$il,$tckn) {
+    $vknSorgu=Edevlet::vkn_sorgu($vkn,$vd,$il,$tckn);
     return $vknSorgu;
 }
 

@@ -50,7 +50,7 @@ class Edevlet extends ActiveRecord\Model
     }
 
 
-    public static function vkn_sorgu($vkn,$vd,$il) {
+    public static function vkn_sorgu($vkn,$vd,$il,$tckn) {
         $token = Edevlet::new_token();
 
         if($token->status=='error') {
@@ -63,7 +63,7 @@ class Edevlet extends ActiveRecord\Model
         $jp=json_encode(array(
             "dogrulama"=>array(
                 "vkn1"=>$vkn,
-                "tckn1"=>"",
+                "tckn1"=>$tckn,
                 "iller"=>$il,
                 "vergidaireleri"=>$vd
             )

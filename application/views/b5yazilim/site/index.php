@@ -5,6 +5,10 @@
       <input type="text" class="form-control" id="vkn" placeholder="Vergi No">
     </div>
     <div class="form-group col-md-4">
+      <label for="inputAddress">TC Kimlik No</label>
+      <input type="text" class="form-control" id="tckn" placeholder="TC Kimlik No">
+    </div>
+    <div class="form-group col-md-4">
       <label for="sehir">Şehir Seçin</label>
       <select id="sehir" class="form-control">
         <option selected>Seçin</option>
@@ -30,6 +34,7 @@
 <script>
   const baseUrl = '<?=base_url();?>';
   $('body').on('change','#sehir',function() {
+    console.log(baseUrl+'Gibapi/getVD');
     var sehir = $(this).val();
     $('#response').html('');
     $.ajax({
@@ -53,6 +58,7 @@
     var sehir = $('#sehir').val();
     var vd = $('#vds').val();
     var vkn = $('#vkn').val();
+    var tckn = $('#tckn').val();
     $('#response').html('');
     $.ajax({
       url: baseUrl+'Gibapi/sorgu',
@@ -61,7 +67,8 @@
       data: {
         sehir:sehir,
         vd:vd,
-        vkn:vkn
+        vkn:vkn,
+        tckn:tckn
       },
       success: function (response) {
         if(response.status==200) {

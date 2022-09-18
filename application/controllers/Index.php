@@ -47,7 +47,8 @@ class Index extends MY_Controller
 		$sehir = $this->input->post('sehir',TRUE);
 		$vd = $this->input->post('vd',TRUE);
 		$vkn = $this->input->post('vkn',TRUE);
-		$vergiSorgula = getVergiDetail($vkn,$vd,$sehir);
+		$tckn = $this->input->post('tckn',TRUE);
+		$vergiSorgula = getVergiDetail($vkn,$vd,$sehir,$tckn);
 		
 		if($vergiSorgula['status']!='error') {
 			$json['data']='
@@ -57,6 +58,8 @@ class Index extends MY_Controller
 				    <tr>
 				      <th scope="row">VKN</th>
 				      <td>'.$vergiSorgula['message']->data->vkn.'</td>
+					  <th scope="row">TCKN</th>
+				      <td>'.$vergiSorgula['message']->data->tckn.'</td>
 				      <th scope="row">ÜNVAN</th>
 				      <td>'.$vergiSorgula['message']->data->unvan.'</td>
 				    </tr>
