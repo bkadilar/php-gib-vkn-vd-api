@@ -6,5 +6,7 @@ Vkn Sorgulama PHP ile API kullanımı
 
 Not: Vkn Sorgulama PHP, Bu örnekte sadece VKN ile işlem yapılmıştır. Dilerseniz TC Kimlik No ile de sorgulama yapabilirsiniz bu kodlar üzerinden ( Bkz. array içindeki tckn1 )
 
-
 DEMO : https://www.b5yazilim.com/demo/Gibapi
+
+Yeni : Hem VKN hem TC Kimlik No ile sorgulama yapılabilir.
+DEMO : https://wpdestek.info/gib/
