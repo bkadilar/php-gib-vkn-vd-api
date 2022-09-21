@@ -1069,7 +1069,8 @@
         "034":[ 
         {"kod":"034295","vdadi":"ADALAR VD"},                      
         {"kod":"034244","vdadi":"ANADOLU KURUMLAR VD"},            
-        {"kod":"034291","vdadi":"ATIŞALANI VD"},                   
+        {"kod":"034291","vdadi":"ATIŞALANI VD"},  
+        {"kod":"034223","vdadi":"ALEMDAĞ VD"},                  
         {"kod":"034294","vdadi":"AVCILAR VD"},                     
         {"kod":"034284","vdadi":"BAKIRKÖY VD"},
         {"kod":"034264","vdadi":"BAYRAMPAŞA VD"},
